@@ -6,7 +6,7 @@
 // https://on.cypress.io/writing-first-test
 describe('My First Test', () => {
   it('Visits voter webpage', () => {
-    cy.visit('http://current-cluster-roost.io/voter');
+    cy.visit('http://10.10.0.10:30030/voter');
 
     cy.intercept({
       method: 'POST', // Route all POST requests
@@ -50,7 +50,7 @@ describe('My First Test', () => {
       );
     });
 
-    cy.visit('http://current-cluster-roost.io/voter/result');
+    cy.visit('http://10.10.0.10:30030/voter/result');
     cy.contains('Roost');
     cy.contains('Docker');
     cy.contains('MiniKube');
